@@ -150,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // ============================
 
 // Initialize EmailJS
-document.addEventListener("DOMContentLoaded", function () {
 emailjs.init("r3GpKR-fOvC1dVQIT");
 
 // Handle form submit
@@ -174,4 +173,5 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
 });
 
 });
+
 
