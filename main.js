@@ -144,4 +144,32 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => loadingScreen.style.display='none', 500);
     mainPage.classList.add("visible");
   }, 4000);
+  
+// ============================
+// EMAILJS CONTACT FORM
+// ============================
+
+// Initialize EmailJS
+emailjs.init("r3GpKR-fOvC1dVQIT");
+
+// Handle form submit
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_rg9piib",     // your service ID
+    "template_b6o7387",    // your template ID
+    this
+  ).then(
+    function () {
+      alert("Message sent successfully! 🚀");
+      document.getElementById("contact-form").reset();
+    },
+    function (error) {
+      alert("Failed to send message 😢");
+      console.log(error);
+    }
+  );
+});
+
 });
